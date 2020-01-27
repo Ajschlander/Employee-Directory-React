@@ -14,6 +14,7 @@ const useStyles = makeStyles({
 
 export default function EmployeeCard(props){
     const classes = useStyles();
+
     return (
         <Grid>
             <Grid item>
@@ -27,6 +28,9 @@ export default function EmployeeCard(props){
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {props.name}
+                    </Typography>
+                    <Typography gutterBottom variant="h6" component="h2">
+                        {props.gender}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {props.email}

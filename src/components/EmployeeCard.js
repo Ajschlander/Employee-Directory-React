@@ -1,13 +1,40 @@
 import React from "react";
-import axios from "axios";
-// https://randomuser.me/api/?results=20
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Card, CardContent, CardActionArea, CardMedia, Typography } from "@material-ui/core";
 
-const getUsers = async () => {
-    let res = await axios.get("https://randomuser.me/api/?results=20");
-    let data = res.data;
-    console.log()
-}
+const useStyles = makeStyles({
+    card: {
+      maxWidth: 345,
+      marginBottom: "1rem"
+    },
+    media: {
+      height: 250,
+    },
+  });
 
-export default function EmployeeCard(){
-    
+export default function EmployeeCard(props){
+    const classes = useStyles();
+    return (
+        <Grid>
+            <Grid item>
+            <Card className={classes.card}>
+                <CardActionArea>
+                    <CardMedia
+                    className={classes.media}
+                    image={props.img}
+                    title="Person image"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {props.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {props.email}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+            </Grid>
+        </Grid>
+  );
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import EmployeeCard from "./EmployeeCard";
+import SelectUsers from "./SelectUsers";
 
 export default function DirectoryApp(){
     return (
         <div>
             <Header />
-            <EmployeeCard />
+            <SelectUsers />
         </div>
     )
 }
